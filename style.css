@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --white : hsla(0, 0%, 100%, 1);
+  --white-gray : hsla(240, 9%, 89%, 1);
+  --white-nav-gray : hsla(240, 6%, 58%, 1);
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  background-size: cover;
+  background-image: url(./assets/home-bg.jpg);
+}
+
+nav {
+  padding: 4rem 0 4rem 7.2rem;
+  display: flex;
+  place-items: center;
+}
+
+a {
+  text-justify: center;
+  color: var(--white-nav-gray);
+  font-size: 24px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+nav a {
+  margin-right: 4.3rem;
+}
+
+nav a + a {
+  margin-right: 5.4rem;
+}
+
+nav a:nth-child(1):hover {
+  animation: rotate 3s;
+}
+
+nav a:hover,
+.home nav a:nth-child(2),
+.universe nav a:nth-child(3),
+.explorer nav a:nth-child(4) {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.universe body{
+  background-image: url(./assets/universe-bg.jpg);
+}
+
+.explorer body{
+  background-image: url(./assets/explorer-bg.jpg);
+}
+
+h1 {
+  color: var(--white-gray);
+  font-size: 4.8rem;
+  font-weight: 700;
+  margin-top: 6.3rem;
+}
+
+p {
+  color: var(--white-gray);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2.9rem;
+
+  animation: skew 3s ease-in-out;
+}
+
+.page {
+  margin-left: 10.2rem;
+}
+
+.page h1 {
+  margin-bottom: 1.6rem;
+  animation: skew 3s ease-in-out;
+}
+
+#home {
+  text-align: center;
+  margin-top: 17.2rem;  
+}
+
+#home h1 {
+  margin-bottom: 2.4rem;
+}
+
+button {
+  padding: 1.2rem;
+  border-radius: 5px;
+  border: 2px solid var(--white);
+  color: var(--white);
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+  text-transform: uppercase;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+button span {
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+ 
+button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -15px;
+  transition: 0.5s;
+}
+ 
+button:hover span {
+  padding-right: 15px;
+}
+ 
+button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+#universe {
+  position: relative;
+  width: 68rem;
+}
+
+#universe button {
+  position: absolute;
+  right: 4rem;
+  margin-top: 10rem;
+  animation: skew 3s ease-in-out;
+}
+
+ 
+@keyframes skew {
+  0% {
+    translate: -10px;
+    opacity: 0;
+  }
+  30% {
+    translate: 10px;
+  }
+  50% {
+    transform: skew(10deg);
+  }
+}
+
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+}
